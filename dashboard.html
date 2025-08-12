@@ -16,19 +16,23 @@
   <main class="container">
     <section class="card">
       <h2 class="card-title">Registrar estudiante</h2>
-      <div class="form-group">
-        <label for="nombre" class="visually-hidden">Nombre del estudiante</label>
-        <input type="text" id="nombre" placeholder="Nombre del estudiante" class="input-field" />
-      </div>
-      <div class="form-group">
-        <label for="correo" class="visually-hidden">Correo</label>
-        <input type="email" id="correo" placeholder="Correo" class="input-field" />
-      </div>
-      <div class="form-group">
-        <label for="clase" class="visually-hidden">Clase</label>
-        <input type="text" id="clase" placeholder="Clase" class="input-field" />
-      </div>
-      <button onclick="agregarEstudiante()" class="btn btn-primary">Agregar</button>
+      <form id="formulario-estudiantes">
+        <div class="form-group">
+          <label for="nombre" class="visually-hidden">Nombre del estudiante</label>
+          <input type="text" id="nombre" placeholder="Nombre del estudiante" class="input-field" required />
+        </div>
+        <div class="form-group">
+          <label for="correo" class="visually-hidden">Correo</label>
+          <input type="email" id="correo" placeholder="Correo" class="input-field" required />
+        </div>
+        <div class="form-group">
+          <label for="clase" class="visually-hidden">Clase</label>
+          <input type="text" id="clase" placeholder="Clase" class="input-field" required />
+        </div>
+        <div class="btn-group">
+          <button type="button" id="btn-accion-estudiante" class="btn btn-primary">Agregar</button>
+        </div>
+      </form>
     </section>
 
     <section class="card">
@@ -39,12 +43,12 @@
     <section class="card">
       <h2 class="card-title">Subir archivo</h2>
       <div class="form-group">
-        <label for="estudiante" class="label">Selecciona un estudiante:</label>
+        <label for="estudiante">Selecciona un estudiante:</label>
         <select id="estudiante" class="select-field"></select>
       </div>
       <div class="form-group">
         <label for="archivo" class="visually-hidden">Seleccionar archivo</label>
-        <input type="file" id="archivo" class="file-input" />
+        <input type="file" id="archivo" class="input-field" />
       </div>
       <button onclick="subirArchivo()" class="btn btn-primary">Subir</button>
     </section>

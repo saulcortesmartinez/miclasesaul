@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="auth-main">
-    <h1 class="main-title">Bienvenido A Mi Clase En La Nube</h1>
+  <div class="header">
+    <h1 class="header-title">Mi Clase En La Nube</h1>
+    </div>
 
-    <section id="auth-container" class="auth-card">
+  <main class="container">
+    <section class="card">
       <div id="login-form">
         <h2 class="card-title">Iniciar Sesión</h2>
         <div class="form-group">
@@ -31,10 +33,13 @@
         <div class="form-group">
           <input type="password" id="reg-password" placeholder="Contraseña" class="input-field" />
         </div>
-        <button onclick="register()" class="btn btn-secondary">Crear cuenta</button>
+        <button onclick="register()" class="btn btn-primary">Crear cuenta</button>
         <p class="form-link">¿Ya tienes cuenta? <a href="#" onclick="toggleForms()">Inicia sesión aquí</a></p>
       </div>
     </section>
+    
+    <section class="card"></section>
+
   </main>
   
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
