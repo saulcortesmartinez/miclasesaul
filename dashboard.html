@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Panel - Mi Clase en la Nube Alexis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Estudiantes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
+
+<header class="header">
     <h1 class="header-title">Panel de Estudiantes</h1>
-    <button onclick="cerrarSesion()" class="cerrar-btn">Cerrar sesión</button>
-  </header>
+    <button class="cerrar-btn">Cerrar sesión</button>
+</header>
 
-  <main class="container">
-    <section class="card">
-      <h2 class="card-title">Registrar estudiante</h2>
-      <form id="formulario-estudiantes">
-        <div class="form-group">
-          <label for="nombre" class="visually-hidden">Nombre del estudiante</label>
-          <input type="text" id="nombre" placeholder="Nombre del estudiante" class="input-field" required />
-        </div>
-        <div class="form-group">
-          <label for="correo" class="visually-hidden">Correo</label>
-          <input type="email" id="correo" placeholder="Correo" class="input-field" required />
-        </div>
-        <div class="form-group">
-          <label for="clase" class="visually-hidden">Clase</label>
-          <input type="text" id="clase" placeholder="Clase" class="input-field" required />
-        </div>
-        <div class="btn-group">
-          <button type="button" id="btn-accion-estudiante" class="btn btn-primary">Agregar</button>
-        </div>
-      </form>
-    </section>
+<div class="container">
+    <div class="card">
+        <h2 class="card-title">Registrar estudiante</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <input type="text" class="input-field" placeholder="Nombre del estudiante" name="nombre">
+            </div>
+            <div class="form-group">
+                <input type="email" class="input-field" placeholder="Correo" name="correo">
+            </div>
+            <div class="form-group">
+                <input type="text" class="input-field" placeholder="Clase" name="clase">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </div>
+        </form>
+    </div>
 
-    <section class="card">
-      <h2 class="card-title">Lista de estudiantes</h2>
-      <ul id="lista-estudiantes" class="list"></ul>
-    </section>
+    <div class="card">
+        <h2 class="card-title">Subir archivo</h2>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <p>Selecciona un estudiante:</p>
+                <select class="select-field" name="estudiante">
+                    <option value="">Selecciona un estudiante</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="archivo" class="file-upload">
+                    <input type="file" id="archivo" name="archivo" class="input-field">
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Subir</button>
+            </div>
+        </form>
+        
+        <h2 class="card-title">Archivos subidos</h2>
+        <ul class="list">
+            <li>No hay archivos subidos.</li>
+        </ul>
+    </div>
+</div>
 
-    <section class="card">
-      <h2 class="card-title">Subir archivo</h2>
-      <div class="form-group">
-        <label for="estudiante">Selecciona un estudiante:</label>
-        <select id="estudiante" class="select-field"></select>
-      </div>
-      <div class="form-group">
-        <label for="archivo" class="visually-hidden">Seleccionar archivo</label>
-        <input type="file" id="archivo" class="input-field" />
-      </div>
-      <button onclick="subirArchivo()" class="btn btn-primary">Subir</button>
-    </section>
-
-    <section class="card">
-      <h2 class="card-title">Archivos subidos</h2>
-      <ul id="lista-archivos" class="list"></ul>
-    </section>
-  </main>
-  
-  <script src="js/dashboard.js"></script>
 </body>
 </html>

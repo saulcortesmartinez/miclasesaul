@@ -279,4 +279,4 @@ async function cerrarSesion() {
     } catch (error) {
         alert("Error al cerrar sesión: " + error.message);
     }
-}ß
+}
